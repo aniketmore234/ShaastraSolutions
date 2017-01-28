@@ -1,0 +1,54 @@
+<div id="block_container4" class="container_fluid4">
+	<div ng-show="isActive('/signup') || isActive('/signup/student') || isActive('/signup/company')">
+  		<div id="bloc5"><h4><b> Best Discribes you :</b></h4>
+  		</div>
+  		<div id="bloc5">
+    	<a href="#!/signup/student"><div id="bloc51"><h4><b>Student</b></h4></div></a>
+    	<a href="#!/signup/company"><div id="bloc52"><h4><b>Company</b></h4></div></a>
+  		</div>
+	</div>
+	
+	<div>
+		<form class="signupForm" novalidate>
+			<p class="text" ng-show="isActive('/signup/student') || isActive('/signup/company')" ><b>Name:</b></p>
+			<input required ng-show="isActive('/signup/student') || isActive('/signup/company')"></input>
+
+			<p class="text" ng-show="isActive('/signup/student')"><b>College:</b></p>
+			<input required ng-show="isActive('/signup/student')"></input>
+			
+			<p class="text" ng-show="isActive('/signup/student')"><b>Phone Number:</b></p>
+			<input required ng-show="isActive('/signup/student')"></input>
+
+			<p class="text" ng-show="isActive('/signup/student') || isActive('/signup/company') || isActive('/login') || isActive('/login/reset')"><b>Email id:</b></p>
+			<input ng-show="isActive('/signup/student') || isActive('/signup/company') || isActive('/login') || isActive('/login/reset')" required></input>
+
+			<p class="text" ng-show="isActive('/signup/student') || isActive('/signup/company') || isActive('/login')"><b>Password:</b></p>
+			<input type="password" ng-show="isActive('/signup/student') || isActive('/signup/company') || isActive('/login')" required></input>
+
+			<p class="text" ng-show="isActive('/signup/student') || isActive('/signup/company')"><b>Confirm Password:</b></p>
+			<input type="password" ng-show="isActive('/signup/student') || isActive('/signup/company')" required></input>
+
+			<p class="text" ng-show="isActive('/signup/student')"><b>Skills:</b></p>
+			<textarea rows="4" cols="60" required ng-show="isActive('/signup/student')"></textarea>
+
+			<p class="text" ng-show="isActive('/signup/student')"><b>Credentials:</b></p>
+			<textarea rows="4" cols="60" required ng-show="isActive('/signup/student')"></textarea>
+
+			<p class="text" ng-show="isActive('/signup/student')"><b>Expectations:</b></p>
+			<textarea rows="4" cols="60" required ng-show="isActive('/signup/student')"></textarea>
+			
+		</form>
+
+			<button type="button" class="btn btn-primary btn-md" ng-show="isActive('/signup/student') || isActive('/signup/company')">Register</button>
+			<button type="button" class="btn btn-primary btn-md" ng-show="isActive('/login')">Login</button>
+			<button type="button" class="btn btn-primary btn-md" ng-show="isActive('/login/reset')">Submit</button>
+
+			<p ng-show="1"></p>
+
+			<p ng-show="isActive('/login')"><a href="#!/login/reset">Forgot Password?</a></p>
+			<p ng-show="isActive('/login')"><a href="#!/signup">New user? Click here to register</a></p>
+			
+			<p class="text" ng-show="isActive('/signup/student') || isActive('/signup/company')"><h8><a href="#!/login">Already registered?</a></h8></p>
+
+	</div>
+</div>

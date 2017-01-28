@@ -1,0 +1,60 @@
+<div id="block_container4">
+	<h2>User Details</h2>
+	<div ng-controller="ProjectController as projectctrl">
+	<ul>
+		<li>Name: {{auth.user.name}}</li>
+		<li>Email id: {{auth.user.email}}</li>
+	</ul>
+
+	<div ng-show="auth.user.type==='student'">
+	<h3>Register for a Project</h3>
+	<br>
+	<select style="width:30%; height:30px">
+		<option>--Choose a project--</option>
+    	<option ng-repeat ="project in projectctrl.projects">{{project.name}}</option>
+	</select>
+	<button type="button" class="btn btn-primary btn-md">Register</button>
+
+	<br>
+	<h3>Registered Projects</h3>
+	<ul ng-repeat ="project in auth.user.projects" class="list3">
+		<li ng-init="temp2=0"><a href href ng-click="temp2=1"><h4>{{project.name}}</h4></a></li>
+		<div ng-show="temp2===1">
+			<p ng-init="temp1=0">
+			<h4>Description:</h4>
+			<p ng-show="temp1===0"> 
+			{{project.description | limitTo:200}} <a href ng-click="temp1=1">+More</a>
+			</p>
+			<p ng-show="temp1===1">{{project.description}} <a href ng-click="temp1=0">-Less</a></p>
+			</p>
+			<p>Click <a href={{project.websiteLink}} target="_blank">here</a> to visit company website.</p>
+			<p>Click <a href={{project.applyLink}} target="_blank">here</a> to apply for the project.</p>
+			<p><a href ng-click="temp2=0"><strong>-Less</strong></a></p>
+		</div>
+	</ul>
+	</div>
+	<div ng-show="auth.user.type==='company'">
+	
+	<h3>Posted Projects</h3>
+	<ul ng-repeat ="project in auth.user.projects" class="list3">
+		<li ng-init="temp2=0"><a href href ng-click="temp2=1"><h4>{{project.name}}</h4></a></li>
+		<div ng-show="temp2===1">
+			<p ng-init="temp1=0">
+			<p ng-show="temp1===0"> 
+			<p><a href ng-click="temp2=0"><strong>-Less</strong></a></p>
+		</div>
+	</ul>
+	<h3>Post a New Project</h3>
+	<p class="text"><b>Type of Work:</b></p>
+			<textarea rows="4" cols="60" required></textarea>
+
+			<p class="text"><b>Project Details:</b></p>
+			<textarea rows="10" cols="60" required></textarea>
+	<br><br>		
+	<button type="button" class="btn btn-primary btn-md">Submit</button>
+
+	<br>	
+	</div>
+</div>
+
+ 					

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+
+<html ng-app="solutions">
+
+<head>
+	<title>Shaastra Solutions</title>
+	<link rel="stylesheet" type="text/css" href="./styles/bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="./styles/main.css">
+	<script type="text/javascript" src="./scripts/jquery-3.1.1.min.js"></script>
+	<script type="text/javascript" src="./styles/bootstrap/js/bootstrap.min.js"></script>
+  	<script type="text/javascript" src="./scripts/angular.min.js"></script>
+  	<script type="text/javascript" src="./scripts/angular-resource.min.js"></script>
+  	<script type="text/javascript" src="./scripts/angular-route.min.js"></script>
+  	<script type="text/javascript" src="./scripts/app.js"></script>
+</head>
+
+<body ng-controller="NavbarController as navctrl">
+
+<div class="block_container">
+	<div id="bloc1">SHAASTRA SOLUTIONS</div>
+	<div id="bloc2"><a href="http://www.shaastra.org" target="_blank"><img src="./images/shaastraLOGO.png" height="70px" width="150px"></a></div>
+</div>
+
+<nav class="myNav navbar-inverse" data-spy="affix" data-offset-top="197" role="navigation">
+
+<div class="divBlock container-fluid">
+   <div>
+      <button type = "button" class = "navbar-toggle" 
+         data-toggle = "collapse" data-target = "#example-navbar-collapse">
+         <span class = "sr-only">Toggle navigation</span>
+         <span class = "icon-bar"></span>
+         <span class = "icon-bar"></span>
+         <span class = "icon-bar"></span>
+      </button>
+   </div>
+   
+   <div class = "collapse navbar-collapse" id = "example-navbar-collapse" ng-controller="AuthController as authctrl">
+  
+        <ul class = "nav navbar-nav">
+          <li class="list1" ng-class="{active:isActive('/')}"><a href = "#!/">Home</a></li>
+          <li class="list1" ng-class="{active:isActive('/about')}"><a href = "#!/about">About</a></li>
+          <li class="list1" ng-class="{active:isActive('/projects')}"><a href = "#!/projects">Projects</a></li>
+          <li class="list1" ng-class="{active:isActive('/impact')}"><a href = "#!/impact">Impact</a></li>
+          <li class="list1" ng-class="{active:isActive('/contact')}"><a href = "#!/contact">Contact us</a></li>      
+        </ul>
+
+        <ul class = "nav navbar-nav navbar-right" ng-hide="authctrl.isUserAuth">
+          <li class="list1" ng-class="{active:isActive('/login')}"><a href = "#!/login">Login</a></li>
+          <li class="list1" ng-class="{active:isActive('/signup') || isActive('/signup/student') || isActive('/signup/company')}"><a href = "#!/signup">Sign up</a></li>
+        </ul>
+
+        <ul class = "nav navbar-nav navbar-right" ng-show="authctrl.isUserAuth">
+            <li class="dropdown list1">
+                    <a href class="dropdown-toggle" data-toggle="dropdown">
+                        <span class="glyphicon glyphicon-user icon-size"></span>
+                         Welcome!
+                        <span class="glyphicon glyphicon-chevron-down icon-size"></span>
+                    </a>
+                    <ul class="dropdown-menu">
+                    	<li><a href="#!/dashboard">Profile</a></li>	
+        		    	<li><a href="#">Sign Out <span class="glyphicon glyphicon-log-out pull-right"></span></a></li>
+       				</ul>
+                </li>
+        </ul>
+      
+   </div>
+</div>
+</nav>
+
+<div class="social" data-spy="affix" data-offset-top="-2">
+  <p>
+    <a href>
+      <img title="Twitter" alt="Twitter" src="./images/twitter.png" width="30" height="30" />
+    </a>
+  </p>
+  <p>
+    <a href>
+      <img title="Facebook" alt="Facebook" src="./images/facebook.png" width="30" height="30" />
+    </a>  
+  </p>
+  <p>
+    <a href>
+      <img title="Email" alt="Email" src="./images/email.png" width="30" height="30" />
+    </a>
+  </p>
+</div>
+
+<div ng-view=""></div>
+
+</body>
+</html>
+
+<!-- <span class="glyphicon glyphicon-user user-icon"></span> -->

@@ -1,0 +1,15 @@
+<div>
+<div id="block_container3" class="container-fluid3">
+	<div ng-repeat ="project in projectctrl.projects" id="panels">
+		<h3>{{project.name}}</h3>
+		<p ng-init="temp=0">
+			<h4>Description:</h4>
+			<p ng-show="temp===0"> 
+			{{project.description | limitTo:200}} <a href ng-click="temp=1">+More</a>
+			</p>
+			<p ng-show="temp===1">{{project.description}} <a href ng-click="temp=0">-Less</a></p>
+		</p>
+		<p>Click <a href={{project.websiteLink}} target="_blank">here</a> to visit company website.</p>
+		<p>Click <a href={{project.applyLink}} target="_blank">here</a> to apply for the project.</p>
+	</div>
+</div>
