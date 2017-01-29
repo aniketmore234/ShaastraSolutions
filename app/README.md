@@ -1,6 +1,6 @@
 # ShaastraSolutionsFrontend
 
-Go to app folder and it on a simple http server for preview.
+Go to app folder and put it on a simple http server for preview (like python SimpleHTTPServer).
 
 Change isUserAuth property to true/false  of AuthController to view the preview of navbar after login.
 
